@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav id="nav-header" class="navbar">
+
+		<button id="menuButton" type="button" class="btn btn-info" onclick="openSidebar();">
+
+			<span>Menu</span>
+		</button>
+		<a id="webTitle" class="navbar-brand" href="#">ToDoList</a>
+
+		<!--onclick="openLogin();"-->
+		<button type="button" id="loginButton" class="btn btn-primary" data-toggle="modal"
+			data-target="#loginForm">Login</button>
+
+	</nav>
+
+
+	<div id="spacer">
+	</div>
+
+	<div id="sidebarWrap" class="wrapper">
+
+		<!-- Sidebar -->
+		<nav id="sidebar" style="display: none">
+			<ul class="list-unstyled components">
+				<li class="active">
+
+				<li>
+					<a id="currentTab" href="#">Personal Tasks</a>
+				</li>
+				<li>
+					<a href="#">Work</a>
+				</li>
+				<li>
+					<a href="#">Projects</a>
+				</li>
+				<li>
+					<a href="#">Shopping List</a>
+				</li>
+				<li>
+					<a href="#">Archive</a>
+				</li>
+			</ul>
+		</nav>
+
+
+		<div id=mainContent>
+
+			<!-- style="display: none" -->
+			<div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="label"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Login</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div id="formContent" class="modal-body">
+							<!-- Login Form -->
+							<form>
+								<input type="email" id="login" name="login" placeholder="email">
+								<input type="password" id="password" placeholder="password">
+
+
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<input id="submitLogin" class="btn btn-primary" type="submit" value="Log In">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div id="addTaskCard" class="card" style="display: none">
+				<h5 class="card-header">Personal Tasks</h5>
+				<div class="card-body">
+					<form>
+						<label for="taskTitle">Title</label>
+						<textarea id="editTask1" class="form-control" rows=1></textarea>
+
+						<label for="taskDescript">Description</label>
+						<textarea id="editTask2" class="form-control" rows=2></textarea>
+
+						<label for="taskDescript">Due Date</label>
+						<input id="dateInput" type="date">
+
+						<div id="date">
+							<a id="cardButtons" href="#" class="btn btn-primary">Submit</a>
+							<a id="cardButtons" href="#" class="btn btn-primary" onclick="cancelAddTask();">Cancel</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="card">
+				<h5 class="card-header">
+					Personal Tasks
+					<a id="addTaskButton" href="#" class="btn btn-primary" onclick="addTaskButton();">Add Task</a></h5>
+				<!-- task list here-->
+				<div id=v>
+					<!-- <div id="cardBody" class="card-body">
+							<div id="date">
+						<p>DATE</p>
+						<p>DUE DATE</p>
+						<a id="cardButtons" href="#" class="btn btn-primary">Delete</a>
+						<a id="cardButtons" href="#" class="btn btn-primary">Edit</a>
+					</div>
+					<div id="cardContent">
+						<h5 class="card-title">Title</h5>
+						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+
+		<div id="spacer">
+		</div>
+
+	</div>
+
+	</div>
+
+
+</body>
+
+</html>
