@@ -20,19 +20,21 @@ public class TaskController {
 	@Autowired
 	TaskRepository taskRepository;
 	
-	@RequestMapping(value = "task", method = RequestMethod.GET)
+	@RequestMapping(value = "tasks", method = RequestMethod.GET)
     public List<Task> list(){
         return taskRepository.findAll();
+        
     }
 	
 	@RequestMapping(value = "task/{id}", method = RequestMethod.GET)
-    public Task get(@PathVariable Integer taskId){
-        return taskRepository.findOne(taskId);
+    public Task get(@PathVariable Integer id){
+        return taskRepository.findOne(id);
     }
+	
 
 	@RequestMapping(value = "task/{id}", method = RequestMethod.DELETE)
-    public Task delete(@PathVariable Integer taskId){
-        Task existingTask = taskRepository.findOne(taskId);
+    public Task delete(@PathVariable Integer id){
+        Task existingTask = taskRepository.findOne(id);
         taskRepository.delete(existingTask);
         return existingTask;
     }
@@ -48,5 +50,8 @@ public class TaskController {
     public Task create(@RequestBody Task task){
         return taskRepository.saveAndFlush(task);
     }
+	
+	
+	
 
 }

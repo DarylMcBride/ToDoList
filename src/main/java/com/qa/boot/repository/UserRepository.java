@@ -8,5 +8,6 @@ import com.qa.boot.model.Users;
 public interface UserRepository extends JpaRepository<Users , Integer> {
 
 	
+	
 
 }

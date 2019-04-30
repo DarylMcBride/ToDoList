@@ -38,6 +38,9 @@ public class Task {
 		
 	}
 	
+	public Integer getTaskId() {
+		return taskId;	
+	}
 	public String getName() {
 		return name;
 	}
