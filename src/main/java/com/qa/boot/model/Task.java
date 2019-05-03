@@ -26,18 +26,31 @@ public class Task {
 	private Date dueDate;
 	@NotNull
 	private Date openDate;
+	@NotNull
+	private Integer userId;
 	
-	public Task(String name, String descript,Date openDate, Date dueDate) {
+	public Task(String name, String descript,Date openDate, Date dueDate, Integer UserId) {
 		this.setName(name);
 		this.setDescript(descript);
 		this.setDueDate(dueDate);
 		this.setOpenDate(openDate);
+		this.setUserId(userId);
 	}
 	
 	public Task() {
 		
 	}
 	
+	public Integer getUserId() {
+		return userId;
+	}
+	
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public Integer getTaskId() {
+		return taskId;	
+	}
 	public String getName() {
 		return name;
 	}
