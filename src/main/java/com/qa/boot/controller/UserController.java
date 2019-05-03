@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.boot.model.Users;
@@ -31,6 +32,11 @@ public class UserController {
     public Users get(@PathVariable Integer userId){
         return userRepository.findOne(userId);
     }
+	
+	@RequestMapping(method = RequestMethod.GET)
+    public Users get(@RequestParam(value="email") String email){
+        return userRepository.findByEmail(email);
+	}
 
 	@RequestMapping(value = "user/{id}", method = RequestMethod.DELETE)
     public Users delete(@PathVariable Integer userId){

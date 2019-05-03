@@ -20,7 +20,7 @@ public class TaskController {
 	@Autowired
 	TaskRepository taskRepository;
 	
-	@RequestMapping(value = "tasks", method = RequestMethod.GET)
+	@RequestMapping(value = "task", method = RequestMethod.GET)
     public List<Task> list(){
         return taskRepository.findAll();
         
@@ -40,8 +40,8 @@ public class TaskController {
     }
 
 	@RequestMapping(value = "task/{id}", method = RequestMethod.PUT)
-    public Task update(@PathVariable Integer taskId, @RequestBody Task task){
-        Task existingTask = taskRepository.findOne(taskId);
+    public Task update(@PathVariable Integer id, @RequestBody Task task){
+        Task existingTask = taskRepository.findOne(id);
         BeanUtils.copyProperties(task, existingTask);
         return taskRepository.saveAndFlush(task);
     }
