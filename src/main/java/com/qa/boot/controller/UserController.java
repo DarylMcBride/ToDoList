@@ -33,11 +33,12 @@ public class UserController {
         return userRepository.findOne(userId);
     }
 	
-	@RequestMapping(method = RequestMethod.GET)
-    public Users get(@RequestParam(value="email") String email){
-        return userRepository.findByEmail(email);
-	}
-
+	
+	@RequestMapping(value = "user/username/{username}", method = RequestMethod.GET)
+    public Users get(@PathVariable String username){
+        return userRepository.findByUsername(username);
+    }
+	
 	@RequestMapping(value = "user/{id}", method = RequestMethod.DELETE)
     public Users delete(@PathVariable Integer userId){
         Users existingUser = userRepository.findOne(userId);

@@ -31,6 +31,12 @@ public class TaskController {
         return taskRepository.findOne(id);
     }
 	
+	@RequestMapping(value = "task/user/{userId}", method = RequestMethod.GET)
+    public List<Task> get1(@PathVariable Integer userId){
+        return taskRepository.findByUserId(userId);
+    }
+
+
 
 	@RequestMapping(value = "task/{id}", method = RequestMethod.DELETE)
     public Task delete(@PathVariable Integer id){

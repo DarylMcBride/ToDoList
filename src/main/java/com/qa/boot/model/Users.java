@@ -31,14 +31,17 @@ public class Users {
 
 	@NotNull
 	private String password;
+	
+	private String username;
 
-	public Users(Integer userId, String fName, String lName, String email, String phone, String password) {
+	public Users(Integer userId, String fName, String lName, String email, String phone, String password, String usernme) {
 		this.setUserId(userId);
 		this.setfName(fName);
 		this.setlName(lName);
 		this.setEmail(email);
 		this.setPhone(phone);
 		this.setPassword(password);
+		this.setUsername(usernme);
 	}
 
 	public Users() {
@@ -103,6 +106,14 @@ public class Users {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

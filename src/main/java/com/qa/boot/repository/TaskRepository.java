@@ -9,5 +9,5 @@ import com.qa.boot.model.Task;
 public interface TaskRepository extends JpaRepository<Task , Integer> {
 	//List<Task> findAll();
 
-	
+	List<Task> findByUserId(Integer userId);
 }
