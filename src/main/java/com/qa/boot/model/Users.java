@@ -16,22 +16,23 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer userId;
 
-	@NotNull
+	
 	private String fName;
 
-	@NotNull
+	
 	private String lName;
 
 	@NotNull
 	@Email
 	private String email;
 
-	@NotNull
+	
 	private String phone;
 
-	@NotNull
+	
 	private String password;
 	
+	@NotNull
 	private String username;
 
 	public Users(Integer userId, String fName, String lName, String email, String phone, String password, String usernme) {
